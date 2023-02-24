@@ -1,0 +1,4 @@
+git init
+mkdir server
+mkdir web
+mkdir mobile
