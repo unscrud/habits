@@ -1,3 +1,5 @@
 npm init -y
 npm i fastfy
 npm i gitignore -g
+npm i typescript -D
+npx tsc --init
