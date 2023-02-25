@@ -4,4 +4,7 @@ npm i gitignore -g
 npm i typescript -D
 npx tsc --init
 npm i tsx -D
+npm i -D prisma
+npm i @prisma/client
+npx prisma init --datasource-provider SQLite
 npm run dev
