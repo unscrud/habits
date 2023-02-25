@@ -1,5 +1,5 @@
-export function Habit() {
+export function Habit(props) {
   return (
-    <p>Habit</p>
+    <p>{props.completed}</p>
   )
 }
