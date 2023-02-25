@@ -14,4 +14,6 @@ model Habit {
   id         String   @id @default(uuid())
   title      String
   created_at DateTime
+
+  @@map("habits")
 }
