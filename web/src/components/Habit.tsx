@@ -1,5 +1,3 @@
-import './Habit.css'
-
 interface HabitProps {
   completed: number
 }
