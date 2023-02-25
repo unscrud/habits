@@ -9,3 +9,12 @@ gitignore node
 
 # roda o projeto
 npm run dev
+
+# O postcss automatiza tarefas dentro do css
+# O tailwindcss é um plugin do postcss
+# E o autoprefixer adiciona prefixos de browser quando necessário
+npm i -D tailwindcss postcss autoprefixer
+
+# -p para criar o postcss config
+# para integrar o vite com o tailwindcss
+npx tailwindcss init -p
