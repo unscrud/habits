@@ -1,0 +1,11 @@
+# usar o ponto caso esteja criando
+# dentro da pasta com o nome do projeto
+# selecionar react e depois typescript
+npm create vite@latest . 
+npm install
+
+# gera um arquivo gitignore
+gitignore node
+
+# roda o projeto
+npm run dev
