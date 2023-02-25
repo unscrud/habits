@@ -1,5 +1,6 @@
 npm init -y
 npm i fastify
+npm i @fastify/cors
 npm i gitignore -g
 npm i typescript -D
 npx tsc --init
