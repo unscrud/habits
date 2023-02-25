@@ -7,4 +7,5 @@ npm i tsx -D
 npm i -D prisma
 npm i @prisma/client
 npx prisma init --datasource-provider SQLite
+npx prisma migrate dev
 npm run dev
