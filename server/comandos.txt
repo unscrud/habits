@@ -2,6 +2,7 @@ npm init -y
 npm i fastify
 npm i @fastify/cors
 npm i gitignore -g
+gitignore node
 npm i typescript -D
 npx tsc --init
 npm i tsx -D
