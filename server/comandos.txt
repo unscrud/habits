@@ -11,3 +11,5 @@ npm i @prisma/client
 npx prisma init --datasource-provider SQLite
 npx prisma migrate dev
 npm run dev
+npm i -D prisma-erd-generator @mermaid-js/mermaid-cli
+npx prisma generate
