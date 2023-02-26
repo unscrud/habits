@@ -1,0 +1,6 @@
+# cria um projeto com nome mobile usando um template
+# selecionado. Selecionar Blank (TypeScript)
+npx create-expo-app mobile --template
+
+# roda a aplicação
+npx expo start
