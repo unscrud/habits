@@ -18,3 +18,5 @@ npm i -D tailwindcss postcss autoprefixer
 # -p para criar o postcss config
 # para integrar o vite com o tailwindcss
 npx tailwindcss init -p
+
+npm i phosphor-react
