@@ -8,3 +8,6 @@ npx expo start
 # instalação de uma fonte personalizada
 npx expo install expo-font @expo-google-fonts/inter
 
+# instalação do native wind para usar o tailwindcss no rn
+npm i nativewind
+npm i tailwindcss --save-dev
