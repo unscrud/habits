@@ -14,3 +14,4 @@ npm i tailwindcss --save-dev
 
 # instalação da biblioteca para uso de svg no mobile
 npx expo install react-native-svg
+npm i react-native-svg-transformer
