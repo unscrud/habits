@@ -11,3 +11,6 @@ npx expo install expo-font @expo-google-fonts/inter
 # instalação do native wind para usar o tailwindcss no rn
 npm i nativewind
 npm i tailwindcss --save-dev
+
+# instalação da biblioteca para uso de svg no mobile
+npx expo install react-native-svg
