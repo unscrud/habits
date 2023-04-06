@@ -72,4 +72,8 @@ export async function appRoutes(app: FastifyInstance) {
     }
 
   })
+
+  app.patch('/habits/:id/toggle', async (request) => {
+    
+  })
 }
