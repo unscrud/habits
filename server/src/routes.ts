@@ -80,6 +80,14 @@ export async function appRoutes(app: FastifyInstance) {
 
     const {id} =  toggleHabitsParams.parse(request.params)
 
+    const today = dayjs().startOf('day').toDate()
+
+    let day = await prisma.day.findUnique({
+      where: {
+        date: today
+      }
+    })
+
     
   })
 }
