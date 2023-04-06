@@ -88,6 +88,14 @@ export async function appRoutes(app: FastifyInstance) {
       }
     })
 
+    if (!day) {
+      day = await prisma.day.create({
+        data: {
+          date: today
+        }
+      })
+    }
+
     
   })
 }
