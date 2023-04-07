@@ -21,3 +21,7 @@ npx tailwindcss init -p
 
 npm i phosphor-react
 npm i dayjs
+
+# instalação de biblioteca de ui com suporte a acessibilidade (radix)
+# apenas para o modal 
+npm i @radix-ui/react-dialog
