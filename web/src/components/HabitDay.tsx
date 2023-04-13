@@ -14,7 +14,16 @@ export function HabitDay(/*props: HabitDayProps*/) {
             <span className='mt-1 font-extrabold leading-tight text-3xl'>17/01</span>
 
             <div className='h-3 rounded-xl bg-zinc-700 w-full mt-4'>
-              <div className='h-3 rounded-xl bg-violet-600 w-3/4' />
+              
+              <div
+                role='progressbar'
+                aria-label='Progresso de hábitos completados'
+                aria-valuenow={75}
+                aria-aria-valuemin={0}
+                aria-aria-valuemax={100}
+                className='h-3 rounded-xl bg-violet-600 w-3/4' 
+              />
+
             </div>
 
             <Popover.Arrow height={8} width={16} className='fill-zinc-900'/>
