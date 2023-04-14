@@ -27,3 +27,6 @@ npm i dayjs
 npm i @radix-ui/react-dialog
 # para o popover
 npm install @radix-ui/react-popover
+
+# biblioteca para aplicação condicional de className
+npm i clsx
