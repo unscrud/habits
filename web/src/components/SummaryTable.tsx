@@ -30,7 +30,7 @@ export function SummaryTable(){
               <HabitDay
                 key={date.toString()}
                 amount={5} 
-                completed={Math.random() * 5}
+                completed={Math.round(Math.random() * 5)}
               />
             )
           })
