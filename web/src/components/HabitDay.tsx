@@ -13,7 +13,7 @@ export function HabitDay(/*props: HabitDayProps*/) {
             <span className='font-semibold text-zinc-400'>Terça-Feira</span>
             <span className='mt-1 font-extrabold leading-tight text-3xl'>17/01</span>
 
-            <ProgressBar />
+            <ProgressBar progress={40} />
 
             <Popover.Arrow height={8} width={16} className='fill-zinc-900'/>
           </Popover.Content>
