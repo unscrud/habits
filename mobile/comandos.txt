@@ -18,3 +18,8 @@ npm i react-native-svg-transformer
 
 # biblioteca para manipulação de datas
 npm i dayjs
+
+# biblioteca para navegar entre telas
+npm i @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+npm i @react-navigation/native-stack
