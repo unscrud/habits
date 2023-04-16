@@ -7,11 +7,12 @@ interface Props extends TouchableOpacityProps {
   checked?: boolean
 }
 
-export function Checkbox( { title, checked = false  }: Props){
+export function Checkbox( { title, checked = false, ...rest  }: Props){
   return (
     <TouchableOpacity
       activeOpacity={0.7}
       className="flex-row mb-2 items-center"
+      {...rest}
     >
       { 
         checked ? 
