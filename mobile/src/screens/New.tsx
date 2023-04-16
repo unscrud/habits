@@ -26,7 +26,7 @@ export function New() {
           className="h-12 pl-4 rounded-lg mt-3 bg-zinc-800 text-white focus:border-2 focus:border-green-600" 
         />
 
-        <Checkbox/>
+        <Checkbox title="Beber 2l d'água"/>
       </ScrollView>
     </View>
   )
