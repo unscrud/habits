@@ -1,8 +1,8 @@
-import { TouchableOpacity, View, Text } from "react-native";
+import { TouchableOpacity, TouchableOpacityProps, View, Text } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import colors from "tailwindcss/colors";
 
-interface Props {
+interface Props extends TouchableOpacityProps {
   title: string
   checked?: boolean
 }
