@@ -11,7 +11,7 @@ export function Habit() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{paddingBottom: 100}}
       >
-        
+        <BackButton/>
       </ScrollView>
     </View>
   )
