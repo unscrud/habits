@@ -31,6 +31,12 @@ export function Habit() {
           {dayOfWeek}
         </Text>
         
+        <Text
+          className="text-white font-extrabold text-3xl"
+        >
+          {dayAndMonth}
+        </Text>
+        
       </ScrollView>
     </View>
   )
