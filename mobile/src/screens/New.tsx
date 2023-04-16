@@ -66,6 +66,19 @@ export function New() {
           ))
         }
 
+        <TouchableOpacity
+          className="w-full h-14 flex-row items-center justify-center bg-gray-600 rounded-md mt-6"
+          activeOpacity={0.7}
+        >
+          <Feather
+            name="check"
+            size={20}
+            color={colors.white}
+          />
+          <Text className="text-white text-base font-semibold ml-2">
+            Confirmar
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
     </View>
   )
