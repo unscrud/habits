@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { ScrollView, View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, ScrollView, TouchableOpacity } from "react-native";
+import { Feather } from "@expo/vector-icons";
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
+import colors from "tailwindcss/colors";
 
 const availableWeekDays = [
   'Domingo',
@@ -17,10 +19,9 @@ export function New() {
   const [weekDays,setWeekDays] = useState<number[]>([])
 
   function handleToggleWeekDay( weekDayIndex: number ) {
-    if(weekDays.includes(weekDayIndex)) { // vai desmarcar
+    if(weekDays.includes(weekDayIndex)) {
       setWeekDays(prevState => prevState.filter(weekDay => weekDay !== weekDayIndex))
-    } else { // vai marcar
-      // recupera o estado prévio e adiciona o marcado
+    } else {
       setWeekDays(prevState => [...prevState, weekDayIndex])
     }
   }
@@ -64,6 +65,7 @@ export function New() {
             />
           ))
         }
+
       </ScrollView>
     </View>
   )
