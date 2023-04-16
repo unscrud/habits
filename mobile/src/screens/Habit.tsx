@@ -1,6 +1,9 @@
 import { ScrollView, View, Text } from "react-native";
 import { BackButton } from "../components/BackButton";
 
+interface Params {
+  date: string
+}
 
 export function Habit() {
   return (
