@@ -25,7 +25,10 @@ export function NewHabitForm() {
     if (weekDays.includes(weekDay)){
       const weekDaysWithRemovedOne = weekDays.filter(day => day !== weekDay)
       setWeekDays(weekDaysWithRemovedOne)
-    } 
+    } else {
+      const weekDaysWithAddedOne = [...weekDays, weekDay]
+      setWeekDays(weekDaysWithAddedOne)
+    }
   }
 
   return (
