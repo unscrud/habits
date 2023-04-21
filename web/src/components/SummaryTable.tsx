@@ -10,6 +10,13 @@ const summaryDates = generateDateFromYearBeginning()
 const minimumSummaryDatesSize = 18 * 7
 const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length
 
+type Summary = {
+  id: string
+  date: string
+  amount: number
+  completed: number
+}[]
+
 export function SummaryTable(){
   return (
     <div className="w-full flex">
