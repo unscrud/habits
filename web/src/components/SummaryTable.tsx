@@ -1,5 +1,7 @@
 import { generateDateFromYearBeginning } from "../utils/generate-dates-from-year-beginning"
 import { HabitDay } from "./HabitDay"
+import { useEffect, useState } from "react";
+import { api } from '../lib/axios'
 
 const weekDays = ['D','S','T','Q','Q','S','S']
 
@@ -17,7 +19,7 @@ export function SummaryTable(){
             return (
               <div key={`${weekDay}-${i}`} className="text-zinc-400 text-xl h-10 w-10 flex items-center justify-center">
                 {weekDay}
-              </div>
+               </div>
             )
           })
         }       
