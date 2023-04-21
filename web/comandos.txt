@@ -32,3 +32,6 @@ npm i @radix-ui/react-checkbox
 
 # biblioteca para aplicação condicional de className
 npm i clsx
+
+# biblioteca de chamadas ao backend
+npm i axios
