@@ -23,3 +23,6 @@ npm i dayjs
 npm i @react-navigation/native
 npx expo install react-native-screens react-native-safe-area-context
 npm i @react-navigation/native-stack
+
+# biblioteca de acesso ao backend
+npm i axios
