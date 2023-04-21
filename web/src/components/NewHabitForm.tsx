@@ -30,7 +30,8 @@ export function NewHabitForm() {
     })
 
     setTitle('')
-    
+    setWeekDays([])
+
     alert ('Hábito criado com sucesso!')
   }
 
