@@ -3,12 +3,7 @@ import Fastify from "fastify";
 import { appRoutes } from "./routes";
 const app = Fastify()
 
-app.register(cors, {
-  origin: [
-    'http://localhost:3000',
-    'http://localhost:5173'
-  ]
-})
+app.register(cors)
 app.register(appRoutes)
 
 app.listen({
