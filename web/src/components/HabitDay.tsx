@@ -26,7 +26,7 @@ export function HabitDay({date, completed=0, amount=0}: HabitDayProps) {
           'bg-violet-600 border-violet-500': completedPercentage >= 60 && completedPercentage < 80,
           'bg-violet-500 border-violet-400': completedPercentage >= 80
         })}
-      >
+      />
         <Popover.Portal>
           <Popover.Content className='min-w-[323px] p-6 rounded-2xl bg-zinc-900 flex flex-col'>
             <span className='font-semibold text-zinc-400'>
@@ -43,7 +43,6 @@ export function HabitDay({date, completed=0, amount=0}: HabitDayProps) {
             <Popover.Arrow height={8} width={16} className='fill-zinc-900'/>
           </Popover.Content>
         </Popover.Portal>
-      </Popover.Trigger>
     </Popover.Root>
   )
 }
