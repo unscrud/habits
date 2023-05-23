@@ -26,3 +26,6 @@ npm i @react-navigation/native-stack
 
 # biblioteca de acesso ao backend
 npm i axios
+
+# Utilização condicional de classes
+npm i clsx
