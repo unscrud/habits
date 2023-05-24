@@ -16,6 +16,7 @@ const availableWeekDays = [
 ]
 
 export function New() {
+  const [title, setTitle] = useState('')
   const [weekDays, setWeekDays] = useState<number[]>([])
 
   function handleToggleWeekDay(weekDayIndex: number) {
@@ -52,7 +53,8 @@ export function New() {
           className="h-12 pl-4 rounded-lg mt-3 bg-zinc-900 border-zinc-800 text-white border-2 focus:border-green-600"
           placeholder="Exercícios, dormir bem, etc..."
           placeholderTextColor={colors.zinc[400]}
-          onChangeText={text => console.log(text)}
+          onChangeText={setTitle}
+          value={title}
         />
 
         <Text
