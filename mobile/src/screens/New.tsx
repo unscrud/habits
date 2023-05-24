@@ -1,6 +1,6 @@
 import { Feather } from "@expo/vector-icons";
 import { useState } from "react";
-import { ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Alert, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import colors from "tailwindcss/colors";
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
@@ -25,6 +25,17 @@ export function New() {
     } else {
       setWeekDays(prevState => [...prevState, weekDayIndex])
     }
+  }
+
+  async function handleCreateNewHabit() {
+    try {
+      if (!title) {
+        Alert.alert('Novo Hábito', 'Informe o nome do hábito')
+      }
+    } catch (error) {
+
+    }
+
   }
 
   return (
@@ -77,6 +88,7 @@ export function New() {
         <TouchableOpacity
           className="w-full h-14 flex-row items-center justify-center bg-green-600 rounded-md mt-6"
           activeOpacity={0.7}
+          onPress={handleCreateNewHabit}
         >
           <Feather
             name="check"
