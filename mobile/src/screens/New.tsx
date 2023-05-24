@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { View, Text, TextInput, ScrollView, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { useState } from "react";
+import { ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import colors from "tailwindcss/colors";
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
-import colors from "tailwindcss/colors";
 
 const availableWeekDays = [
   'Domingo',
@@ -16,10 +16,10 @@ const availableWeekDays = [
 ]
 
 export function New() {
-  const [weekDays,setWeekDays] = useState<number[]>([])
+  const [weekDays, setWeekDays] = useState<number[]>([])
 
-  function handleToggleWeekDay( weekDayIndex: number ) {
-    if(weekDays.includes(weekDayIndex)) {
+  function handleToggleWeekDay(weekDayIndex: number) {
+    if (weekDays.includes(weekDayIndex)) {
       setWeekDays(prevState => prevState.filter(weekDay => weekDay !== weekDayIndex))
     } else {
       setWeekDays(prevState => [...prevState, weekDayIndex])
@@ -27,22 +27,22 @@ export function New() {
   }
 
   return (
-    <View 
+    <View
       className="flex-1 bg-background px-8 pt-16"
     >
-      <ScrollView 
+      <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: 100}}
+        contentContainerStyle={{ paddingBottom: 100 }}
       >
         <BackButton />
 
-        <Text 
+        <Text
           className="mt-6 text-white font-extrabold text-3xl"
         >
           Criar Hábito
         </Text>
 
-        <Text 
+        <Text
           className="mt-6 text-white font-semibold text-3xbase"
         >
           Qual seu comprometimento
@@ -52,6 +52,7 @@ export function New() {
           className="h-12 pl-4 rounded-lg mt-3 bg-zinc-900 border-zinc-800 text-white border-2 focus:border-green-600"
           placeholder="Exercícios, dormir bem, etc..."
           placeholderTextColor={colors.zinc[400]}
+          onChangeText={text => console.log(text)}
         />
 
         <Text
@@ -61,9 +62,9 @@ export function New() {
         </Text>
 
         {
-          availableWeekDays.map((weekDay,index) => (
-            <Checkbox 
-              key={weekDay} 
+          availableWeekDays.map((weekDay, index) => (
+            <Checkbox
+              key={weekDay}
               title={weekDay}
               checked={weekDays.includes(index)}
               onPress={() => handleToggleWeekDay(index)}
