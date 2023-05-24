@@ -29,11 +29,16 @@ export function New() {
 
   async function handleCreateNewHabit() {
     try {
-      if (!title) {
+      if (!title.trim() && weekDays.length === 0) {
+        Alert.alert('Novo Hábito', 'Informe o nome e escolha a periodicidade do hábito')
+      } else if (!title.trim()) {
         Alert.alert('Novo Hábito', 'Informe o nome do hábito')
+      } else if (weekDays.length === 0) {
+        Alert.alert('Novo Hábito', 'Escolha a periodicidade do hábito')
       }
     } catch (error) {
-
+      console.log(error)
+      Alert.alert('Ops', 'Não foi possível criar o novo hábito')
     }
 
   }
