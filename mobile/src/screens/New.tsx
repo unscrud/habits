@@ -4,6 +4,7 @@ import { Alert, ScrollView, Text, TextInput, TouchableOpacity, View } from "reac
 import colors from "tailwindcss/colors";
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
+import { api } from "../lib/axios";
 
 const availableWeekDays = [
   'Domingo',
@@ -35,6 +36,11 @@ export function New() {
         Alert.alert('Novo Hábito', 'Informe o nome do hábito')
       } else if (weekDays.length === 0) {
         Alert.alert('Novo Hábito', 'Escolha a periodicidade do hábito')
+      } else {
+        await api.post('/habits', { title, weekDays })
+        setTitle('')
+        setWeekDays([])
+        Alert.alert('Novo Hábito', 'Hábito criado com sucesso!')
       }
     } catch (error) {
       console.log(error)
