@@ -1,6 +1,6 @@
 import { useRoute } from "@react-navigation/native";
 import dayjs from "dayjs";
-import { ScrollView, Text, View } from "react-native";
+import { Alert, ScrollView, Text, View } from "react-native";
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
 import { ProgressBar } from "../components/ProgressBar";
@@ -21,7 +21,8 @@ export function Habit() {
     try {
 
     } catch (error) {
-
+      console.log(error)
+      Alert.alert('Ops', 'Não foi possivel carregar as informações dos hábitos')
     } finally {
 
     }
