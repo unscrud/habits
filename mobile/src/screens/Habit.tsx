@@ -1,6 +1,6 @@
 import { useRoute } from "@react-navigation/native";
 import dayjs from "dayjs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Alert, ScrollView, Text, View } from "react-native";
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
@@ -34,6 +34,10 @@ export function Habit() {
       setLoading(false)
     }
   }
+
+  useEffect(() => {
+    fetchHabits()
+  }, [])
 
   if (loading) {
     return (
