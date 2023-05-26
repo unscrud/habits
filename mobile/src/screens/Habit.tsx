@@ -6,6 +6,7 @@ import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
 import { Loading } from "../components/Loading";
 import { ProgressBar } from "../components/ProgressBar";
+import { api } from "../lib/axios";
 
 interface Params {
   date: string
@@ -23,6 +24,9 @@ export function Habit() {
   async function fetchHabits() {
     try {
       setLoading(true)
+
+      const response = await api.get('day', { params: { date } })
+      console.log(response.data)
     } catch (error) {
       console.log(error)
       Alert.alert('Ops', 'Não foi possivel carregar as informações dos hábitos')
