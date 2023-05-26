@@ -1,8 +1,10 @@
 import { useRoute } from "@react-navigation/native";
 import dayjs from "dayjs";
+import { useState } from "react";
 import { Alert, ScrollView, Text, View } from "react-native";
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
+import { Loading } from "../components/Loading";
 import { ProgressBar } from "../components/ProgressBar";
 
 interface Params {
@@ -10,6 +12,7 @@ interface Params {
 }
 
 export function Habit() {
+  const [loading, setLoading] = useState(true)
   const route = useRoute()
   const { date } = route.params as Params
 
@@ -19,13 +22,19 @@ export function Habit() {
 
   async function fetchHabits() {
     try {
-
+      setLoading(true)
     } catch (error) {
       console.log(error)
       Alert.alert('Ops', 'Não foi possivel carregar as informações dos hábitos')
     } finally {
-
+      setLoading(false)
     }
+  }
+
+  if (loading) {
+    return (
+      <Loading />
+    )
   }
 
   return (
