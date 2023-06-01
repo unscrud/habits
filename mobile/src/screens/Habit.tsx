@@ -12,8 +12,17 @@ interface Params {
   date: string
 }
 
+interface DayInfoProps {
+  completedHabits: string[]
+  possibleHabits: {
+    id: string
+    title: string
+  }[]
+}
+
 export function Habit() {
   const [loading, setLoading] = useState(true)
+  const [dayInfo, setDayInfo] = useState<DayInfoProps | null>(null)
   const route = useRoute()
   const { date } = route.params as Params
 
@@ -26,7 +35,7 @@ export function Habit() {
       setLoading(true)
 
       const response = await api.get('day', { params: { date } })
-      console.log(response.data)
+      setDayInfo(response.data)
     } catch (error) {
       console.log(error)
       Alert.alert('Ops', 'Não foi possivel carregar as informações dos hábitos')
@@ -68,17 +77,17 @@ export function Habit() {
         </Text>
 
         <ProgressBar progress={75} />
-
         <View className="mt-6">
-          <Checkbox
-            title="Exemplo Alfa"
-          />
-          <Checkbox
-            title="Exemplo Bravo"
-            checked={true}
-          />
+          {
+            dayInfo?.possibleHabits &&
+            dayInfo?.possibleHabits.map(habit => (
+              <Checkbox
+                key={habit.id}
+                title={habit.title}
+              />
+            ))
+          }
         </View>
-
       </ScrollView>
     </View>
   )
