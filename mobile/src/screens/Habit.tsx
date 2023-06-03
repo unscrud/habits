@@ -43,7 +43,7 @@ export function Habit() {
       setLoading(true)
 
       const response = await api.get('day', { params: { date } })
-      // setDayInfo(response.data)
+      setDayInfo(response.data)
       setCompletedHabits(response.data.completedHabits)
     } catch (error) {
       console.log(error)
