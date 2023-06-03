@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Alert, ScrollView, Text, View } from "react-native";
 import { BackButton } from "../components/BackButton";
 import { Checkbox } from "../components/Checkbox";
+import { HabitsEmpty } from "../components/HabitsEmpty";
 import { Loading } from "../components/Loading";
 import { ProgressBar } from "../components/ProgressBar";
 import { api } from "../lib/axios";
@@ -42,7 +43,7 @@ export function Habit() {
       setLoading(true)
 
       const response = await api.get('day', { params: { date } })
-      setDayInfo(response.data)
+      // setDayInfo(response.data)
       setCompletedHabits(response.data.completedHabits)
     } catch (error) {
       console.log(error)
@@ -96,15 +97,16 @@ export function Habit() {
         <ProgressBar progress={habitsProgress} />
         <View className="mt-6">
           {
-            dayInfo?.possibleHabits &&
-            dayInfo?.possibleHabits.map(habit => (
-              <Checkbox
-                key={habit.id}
-                title={habit.title}
-                checked={completedHabits.includes(habit.id)}
-                onPress={() => handleToggleHabit(habit.id)}
-              />
-            ))
+            dayInfo?.possibleHabits
+              ? dayInfo?.possibleHabits.map(habit => (
+                <Checkbox
+                  key={habit.id}
+                  title={habit.title}
+                  checked={completedHabits.includes(habit.id)}
+                  onPress={() => handleToggleHabit(habit.id)}
+                />
+              ))
+              : <HabitsEmpty />
           }
         </View>
       </ScrollView>
