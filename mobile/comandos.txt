@@ -29,3 +29,6 @@ npm i axios
 
 # Utilização condicional de classes
 npm i clsx
+
+# biblioteca de animação para o rn
+npx expo install react-native-reanimated
