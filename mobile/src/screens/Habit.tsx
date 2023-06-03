@@ -23,6 +23,8 @@ interface DayInfoProps {
 export function Habit() {
   const [loading, setLoading] = useState(true)
   const [dayInfo, setDayInfo] = useState<DayInfoProps | null>(null)
+  const [completedHabits, setCompletedHabits] = useState<string[]>([])
+
   const route = useRoute()
   const { date } = route.params as Params
 
@@ -36,12 +38,22 @@ export function Habit() {
 
       const response = await api.get('day', { params: { date } })
       setDayInfo(response.data)
+      setCompletedHabits(response.data.completedHabits)
     } catch (error) {
       console.log(error)
       Alert.alert('Ops', 'Não foi possivel carregar as informações dos hábitos')
     } finally {
       setLoading(false)
     }
+  }
+
+  async function handleToggleHabit(habitId: string) {
+    if (completedHabits.includes(habitId)) {
+      setCompletedHabits(prevState => prevState.filter(habit => habit !== habitId))
+    } else {
+      setCompletedHabits(prevState => [...prevState, habitId])
+    }
+
   }
 
   useEffect(() => {
@@ -84,6 +96,8 @@ export function Habit() {
               <Checkbox
                 key={habit.id}
                 title={habit.title}
+                checked={completedHabits.includes(habit.id)}
+                onPress={() => handleToggleHabit(habit.id)}
               />
             ))
           }
