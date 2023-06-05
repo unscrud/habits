@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { View } from "react-native";
-import { useAnimatedStyle, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
+import Animated, { useAnimatedStyle, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
 
 interface Props {
   progress?: number
@@ -24,7 +24,7 @@ export function ProgressBar({ progress = 0 }: Props) {
     <View
       className="w-full h-3 rounded-xl bg-zinc-700 mt-4"
     >
-      <View
+      <Animated.View
         className="h-3 bg-violet-600 rounded-xl"
         style={style}
       />
